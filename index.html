@@ -3,10 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ma Page Web</title>
+    <title>AELAD - Groupe de Musique</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+
+        .intro {
+            background-color: #e2e2e2;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 2em;
+            color: #333;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .concerts {
+            background-color: #333;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .concerts h2 {
+            font-size: 2.5em;
+        }
+
+        .concerts ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .concerts li {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #f4a261;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bienvenue sur ma page web GitHub Pages!</h1>
-    <p>C'est une page simple hébergée avec GitHub Pages.</p>
+
+    <header>
+        <h1>AELAD</h1>
+        <p>Le groupe de musique qui vous emmène au cœur du son</p>
+    </header>
+
+    <div class="intro">
+        <h2>Bienvenue sur notre site officiel!</h2>
+        <p>Nous sommes AELAD, un groupe passionné par la musique et l'innovation. Nous mélangeons différents genres musicaux pour créer une expérience unique. Notre musique est un voyage sonore, entre rythmes endiablés et mélodies captivantes.</p>
+    </div>
+
+    <div class="gallery">
+        <img src="https://via.placeholder.com/300x200" alt="Photo 1 du groupe">
+        <img src="https://via.placeholder.com/300x200" alt="Photo 2 du groupe">
+        <img src="https://via.placeholder.com/300x200" alt="Photo 3 du groupe">
+    </div>
+
+    <div class="concerts">
+        <h2>Prochains Concerts</h2>
+        <ul>
+            <li><strong>Paris</strong> - Le 25 Mars 2025 à la Salle Pleyel</li>
+            <li><strong>Berlin</strong> - Le 5 Avril 2025 au Berghain</li>
+            <li><strong>New York</strong> - Le 20 Mai 2025 au Madison Square Garden</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Suivez-nous sur nos réseaux sociaux :</p>
+        <a href="https://www.instagram.com/aelad_music" target="_blank">Instagram</a> | 
+        <a href="https://www.facebook.com/aeladmusic" target="_blank">Facebook</a> | 
+        <a href="https://www.twitter.com/aelad_music" target="_blank">Twitter</a>
+    </footer>
+
 </body>
 </html>
