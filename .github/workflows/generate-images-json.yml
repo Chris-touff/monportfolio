@@ -1,0 +1,41 @@
+name: Update Images JSON
+
+on:
+  push:
+    paths:
+      - 'Images/**'  # Quand des images sont ajoutées ou modifiées dans le dossier 'images/'
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest  # Utilise une machine virtuelle Ubuntu pour exécuter l'action
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Récupère ton code source
+
+      - name: Generate images.json
+        run: |
+          # Liste toutes les images dans le dossier 'images' et crée un fichier images.json
+          find Images/ -type f -name '*.jpg' -o -name '*.jpeg' -o -name '*.png' -o -name '*.gif' > images.txt
+          
+          # Crée un fichier JSON avec la liste des images
+          echo '[' > images.json
+          while read -r image; do
+            echo "  \"${image}\"," >> images.json
+          done < images.txt
+          
+          # Retirer la dernière virgule
+          sed -i '$ s/,$//' images.json
+          echo ']' >> images.json
+
+      - name: Set up Git user
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Commit and push changes
+        run: |
+          git add images.json  # Ajoute le fichier images.json mis à jour
+          git commit -m "Update images.json"  # Commit du fichier JSON mis à jour
+          git push origin HEAD  # Pousse les changements dans ton dépôt, avec le token d'accès
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Utilise le token GitHub Actions pour les permissions
