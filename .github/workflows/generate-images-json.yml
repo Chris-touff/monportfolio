@@ -3,7 +3,7 @@ name: Update Images JSON
 on:
   push:
     paths:
-      - 'images/**'
+      - 'Images/**'
 
 jobs:
   update-json:
@@ -15,7 +15,7 @@ jobs:
       - name: Generate images.json
         run: |
           # Lister toutes les images dans le dossier 'images'
-          find images/ -type f -name '*.jpg' -o -name '*.jpeg' -o -name '*.png' -o -name '*.gif' > images.txt
+          find Images/ -type f -name '*.jpg' -o -name '*.jpeg' -o -name '*.png' -o -name '*.gif' > images.txt
           # Créer un fichier JSON avec la liste des images
           echo '[' > images.json
           while read -r image; do
