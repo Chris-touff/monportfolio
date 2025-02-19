@@ -3,7 +3,12 @@ name: Update Images JSON
 on:
   push:
     paths:
-      - 'Images/**'  # Quand des images sont ajoutées ou modifiées dans le dossier 'images/'
+      - '.github/workflows/**'  # Déclenche l'action quand un fichier de workflow est modifié
+      - 'Images/**'  # Ajouter ici d'autres chemins qui doivent déclencher l'action
+  pull_request:
+    paths:
+      - '.github/workflows/**'  # Déclenche l'action quand un fichier de workflow est modifié
+      - 'Images/**'  # Ajouter ici d'autres chemins
 
 permissions:
   contents: write  # Ajoute cette ligne pour permettre l'écriture dans le dépôt
