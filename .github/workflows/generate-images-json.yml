@@ -3,7 +3,10 @@ name: Update Images JSON
 on:
   push:
     paths:
-      - 'Images/**'
+      - 'Images/**'  # Quand des images sont ajoutées ou modifiées dans le dossier 'images/'
+
+permissions:
+  contents: write  # Ajoute cette ligne pour permettre l'écriture dans le dépôt
 
 jobs:
   update-json:
@@ -31,4 +34,6 @@ jobs:
         run: |
           git add images.json
           git commit -m "Update images.json"
-          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          git push https://github.com/${{ github.repository }}.git HEAD:main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
