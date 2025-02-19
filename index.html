@@ -5,47 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AELAD - Groupe de Musique</title>
     <style>
+        /* Style global */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #121212;
+            color: #fff;
+            line-height: 1.6;
         }
 
+        a {
+            text-decoration: none;
+            color: #f4a261;
+        }
+
+        a:hover {
+            color: #ff6347;
+        }
+
+        /* Header */
         header {
-            background-color: #333;
+            background: linear-gradient(135deg, #4b0082, #000);
             color: white;
-            padding: 20px;
+            padding: 50px 0;
             text-align: center;
         }
 
         header h1 {
+            font-size: 3.5em;
             margin: 0;
-            font-size: 3em;
         }
 
+        header p {
+            font-size: 1.3em;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Intro */
         .intro {
-            background-color: #e2e2e2;
-            padding: 20px;
+            background-color: #1e1e1e;
+            padding: 40px 20px;
             text-align: center;
         }
 
         .intro h2 {
-            font-size: 2em;
-            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
 
         .intro p {
-            font-size: 1.2em;
-            line-height: 1.6;
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
+        /* Gallery */
         .gallery {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            padding: 40px;
+            gap: 15px;
+            padding: 40px 20px;
             flex-wrap: wrap;
         }
 
@@ -54,44 +75,65 @@
             height: 200px;
             object-fit: cover;
             border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
         }
 
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Concerts */
         .concerts {
             background-color: #333;
             color: white;
-            padding: 40px;
+            padding: 40px 20px;
             text-align: center;
         }
 
         .concerts h2 {
             font-size: 2.5em;
+            margin-bottom: 20px;
         }
 
         .concerts ul {
             list-style: none;
             padding: 0;
+            font-size: 1.2em;
         }
 
         .concerts li {
-            font-size: 1.2em;
-            margin: 10px 0;
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #444;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
         }
 
+        .concerts li:hover {
+            background-color: #555;
+        }
+
+        /* Footer */
         footer {
-            background-color: #222;
-            color: white;
-            padding: 20px;
+            background-color: #1a1a1a;
+            padding: 30px 20px;
             text-align: center;
         }
 
+        footer p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
         footer a {
-            color: #f4a261;
-            text-decoration: none;
+            margin: 0 10px;
             font-size: 1.2em;
+            transition: color 0.3s ease;
         }
 
         footer a:hover {
-            text-decoration: underline;
+            color: #ff6347;
         }
     </style>
 </head>
@@ -102,32 +144,4 @@
         <p>Le groupe de musique qui vous emmène au cœur du son</p>
     </header>
 
-    <div class="intro">
-        <h2>Bienvenue sur notre site officiel!</h2>
-        <p>Nous sommes AELAD, un groupe passionné par la musique et l'innovation. Nous mélangeons différents genres musicaux pour créer une expérience unique. Notre musique est un voyage sonore, entre rythmes endiablés et mélodies captivantes.</p>
-    </div>
-
-    <div class="gallery">
-        <img src="https://via.placeholder.com/300x200" alt="Photo 1 du groupe">
-        <img src="https://via.placeholder.com/300x200" alt="Photo 2 du groupe">
-        <img src="https://via.placeholder.com/300x200" alt="Photo 3 du groupe">
-    </div>
-
-    <div class="concerts">
-        <h2>Prochains Concerts</h2>
-        <ul>
-            <li><strong>Paris</strong> - Le 25 Mars 2025 à la Salle Pleyel</li>
-            <li><strong>Berlin</strong> - Le 5 Avril 2025 au Berghain</li>
-            <li><strong>New York</strong> - Le 20 Mai 2025 au Madison Square Garden</li>
-        </ul>
-    </div>
-
-    <footer>
-        <p>Suivez-nous sur nos réseaux sociaux :</p>
-        <a href="https://www.instagram.com/aelad_music" target="_blank">Instagram</a> | 
-        <a href="https://www.facebook.com/aeladmusic" target="_blank">Facebook</a> | 
-        <a href="https://www.twitter.com/aelad_music" target="_blank">Twitter</a>
-    </footer>
-
-</body>
-</html>
+    
