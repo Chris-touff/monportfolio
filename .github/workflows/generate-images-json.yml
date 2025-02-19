@@ -3,10 +3,7 @@ name: Update Images JSON
 on:
   push:
     paths:
-      - 'images/**'  # Quand des images sont ajoutées ou modifiées dans le dossier 'images/'
-
-permissions:
-  contents: write  # Ajoute cette ligne pour permettre l'écriture dans le dépôt
+      - 'Images/**'
 
 jobs:
   update-json:
@@ -17,7 +14,7 @@ jobs:
 
       - name: Generate images.json
         run: |
-          find images/ -type f -name '*.jpg' -o -name '*.jpeg' -o -name '*.png' -o -name '*.gif' > images.txt
+          find Images/ -type f -name '*.jpg' -o -name '*.jpeg' -o -name '*.png' -o -name '*.gif' > images.txt
           echo '[' > images.json
           while read -r image; do
             echo "  \"${image}\"," >> images.json
@@ -34,6 +31,4 @@ jobs:
         run: |
           git add images.json
           git commit -m "Update images.json"
-          git push https://github.com/${{ github.repository }}.git HEAD:main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
