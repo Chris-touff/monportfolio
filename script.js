@@ -39,6 +39,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Initialiser le carrousel
       updateCarousel();
+
+      // Faire défiler automatiquement les images toutes les 3 secondes (3000ms)
+      const interval = setInterval(function () {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateCarousel();
+      }, 3000); // Change l'image toutes les 3 secondes (3000 ms)
+
+      // Facultatif : arrêter l'intervalle si l'utilisateur interagit
+      prevButton.addEventListener("click", function () {
+        clearInterval(interval);  // Arrêter l'intervalle quand l'utilisateur clique sur "précédent"
+      });
+
+      nextButton.addEventListener("click", function () {
+        clearInterval(interval);  // Arrêter l'intervalle quand l'utilisateur clique sur "suivant"
+      });
     })
     .catch(error => {
       console.error("Erreur lors du chargement des images : ", error);
