@@ -82,45 +82,47 @@
         }
 
     /* Carrousel */
-    /* Carrousel */
-     .carousel-container {
-       position: relative;
-       width: 80%;  /* Ajuste la largeur du carrousel */
-       margin: 0 auto;
-       overflow: hidden;  /* Masque les images qui ne sont pas visibles */
-     }
-     
-     .carousel-images {
-       display: flex;
-       transition: transform 0.5s ease-in-out;
-     }
-     
-     .carousel-images img {
-       width: 100%;           /* Les images occupent toute la largeur du conteneur */
-       height: 100%;          /* Les images occupent aussi toute la hauteur du conteneur */
-       object-fit: cover;     /* L'image est redimensionnée pour couvrir tout l'espace du conteneur */
-       display: block;
-     }
-     
-     button {
-       position: absolute;
-       top: 50%;
-       transform: translateY(-50%);
-       background-color: rgba(0, 0, 0, 0.5);
-       color: white;
-       border: none;
-       padding: 10px;
-       cursor: pointer;
-       z-index: 10;
-     }
-     
-     .prev {
-       left: 10px;
-     }
-     
-     .next {
-       right: 10px;
-     }
+   /* Carrousel */
+.carousel-container {
+  position: relative;
+  width: 60%;  /* Ajuste la largeur du carrousel (80% de la largeur de la page) */
+  margin: 0 auto;
+  overflow: hidden;  /* Masque les images qui ne sont pas visibles */
+  max-width: 1000px; /* Tu peux ajuster cette taille comme tu veux */
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+  width: 100%;           /* Remplir toute la largeur disponible */
+  height: 500px;         /* Hauteur fixe pour toutes les images */
+  object-fit: cover;     /* Maintient l'aspect de l'image, mais la découpe si nécessaire */
+  display: block;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
 
 
           
