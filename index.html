@@ -81,7 +81,7 @@
             line-height: 1.8;
         }
 
-          /* Carrousel */
+    /* Carrousel */
      .carousel-container {
        position: relative;
        width: 80%;  /* Ajuste la largeur du carrousel */
@@ -95,9 +95,9 @@
      }
      
      .carousel-images img {
-       width: 100%;          /* Les images occupent toute la largeur du conteneur */
-       height: 300px;        /* Hauteur fixe pour les images */
-       object-fit: cover;    /* Maintient l'aspect des images sans déformation */
+       width: 100%;            /* Les images occupent toute la largeur du conteneur */
+       height: 100%;           /* Les images s'adaptent aussi à la hauteur du conteneur */
+       object-fit: contain;    /* Maintient l'image dans son aspect sans la couper */
        display: block;
      }
      
